@@ -1,57 +1,33 @@
 <div align="center">
-  <img src="assets/esther-banner.gif" alt="Animated purple and neon banner introducing Esther Lee Qian Hui, software student, builder and gamer" width="100%" />
-  <br /><br />
-  <strong>Esther Lee Qian Hui</strong> · IT (Software) student at UTeM · Malaysia
-  <br />
-  <sub>I build practical systems with a soft spot for thoughtful interfaces and a little bit of game energy.</sub>
+  <img src="assets/esther-banner.gif" alt="Animated purple and neon gamer banner introducing Esther Lee Qian Hui" width="100%" />
 </div>
 
 <br />
 
-## ✦ Player profile
+<img src="assets/player-panel.svg" alt="Player profile: Esther Lee Qian Hui, software student at UTeM. Builder and learner focused on systems, data and interfaces." width="100%" />
 
-I enjoy the moment a confusing workflow starts to feel simple. My projects bring together **software logic, data, and the experience of using the product**. I'm still learning, building, and improving — and I like showing the decisions behind the finished work.
+<br />
 
-`SOFTWARE DEVELOPMENT` &nbsp; `DATABASES` &nbsp; `UI/UX` &nbsp; `AUTOMATION`
+<img src="assets/build-panel.svg" alt="Build log: Intelligent Workflow Management System, an academic C++ and MySQL task manager; Hospital Patient Management System, a team algorithm performance project. Public code and demos coming when ready." width="100%" />
 
-## ✦ Build log
+<br />
 
-<table>
-<tr>
-<td width="50%" valign="top">
-<h3>01 / Intelligent Workflow Management System</h3>
-<p>A C++ and MySQL task management system with user roles, assignments, status updates and reports.</p>
-<p><sub>Academic project · C++ · MySQL · workflow design</sub></p>
-</td>
-<td width="50%" valign="top">
-<h3>02 / Hospital Patient Management System</h3>
-<p>An algorithm analysis project comparing sorting and searching methods on a large patient dataset.</p>
-<p><sub>Team academic project · algorithms · performance analysis</sub></p>
-</td>
-</tr>
-</table>
+<img src="assets/loadout-panel.svg" alt="Skill inventory: C++, SQL, MySQL, UiPath, workflow automation, requirements, documentation and testing. Next quests: polished app, clear dashboard and useful automation. Internship work includes fault reporting, ticketing and SAP automation." width="100%" />
 
-<sub>These are project summaries. I'll link public code and demos here when they are ready.</sub>
+<br />
 
-## ✦ Skill inventory
+<img src="assets/after-hours-panel.svg" alt="After hours, Esther enjoys Valorant, Counter-Strike, Minecraft and Overwatch, bringing curiosity and practice to gaming and coding." width="100%" />
 
-| Code & data | Systems & process | How I think |
-| :--- | :--- | :--- |
-| C++ · SQL · MySQL | UiPath · workflow automation | Requirements · documentation · testing |
+<details>
+<summary>Read my profile in text</summary>
 
-During my application development internship, I worked on fault reporting and ticketing workflows, plus SAP-related automation. That experience made me appreciate tools that save real people time.
+I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal Malaysia Melaka (UTeM)**. I enjoy turning complicated workflows into practical tools with thoughtful interfaces.
 
-## ✦ Next quests
+- **Intelligent Workflow Management System:** An academic C++ and MySQL task manager with roles, assignments, status updates, and reports.
+- **Hospital Patient Management System:** A team algorithm project comparing sorting and searching methods on a large dataset.
+- **Tools I've used:** C++, SQL, MySQL, UiPath, workflow automation, requirements, documentation, and testing.
+- **Internship experience:** Fault reporting, ticketing workflows, and SAP-related automation.
+- **Next projects:** A polished app, a clear dashboard, and a useful automation. I'll link public code and demos when ready.
+- **After hours:** Valorant, Counter-Strike, Minecraft, and Overwatch.
 
-- Build a small product with an interface people genuinely enjoy using.
-- Turn complicated information into a clear dashboard.
-- Share a useful automation with a measurable before-and-after story.
-
-## ✦ After hours
-
-Sometimes I'm debugging code; sometimes I'm queueing for a game. I enjoy **Valorant, Counter-Strike, Minecraft and Overwatch** — and I bring the same curiosity to both: learn the mechanics, try something, improve, repeat. 🎮
-
-<div align="center">
-  <br />
-  <sub>Currently in build mode · Stay for the next release ✨</sub>
-</div>
+</details>
