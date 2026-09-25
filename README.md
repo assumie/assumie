@@ -5,9 +5,9 @@
 <br />
 
 <div align="center">
-  <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/"><strong>✦ FoodSnap &amp; Body — Live App Preview ↗</strong></a>
-  <br />
-  <sub>Photo meal journal · nutrition overview · weight trends</sub>
+  <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/">
+    <img src="assets/foodsnap-feature.svg" alt="FoodSnap & Body featured project — click to open the app preview" width="100%" />
+  </a>
 </div>
 
 <br />
