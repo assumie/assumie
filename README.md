@@ -1,64 +1,57 @@
 <div align="center">
-  <img src="assets/banner.svg" alt="Esther Lee — software development and thoughtful interfaces" width="100%" />
-
+  <img src="assets/esther-banner.gif" alt="Animated purple and neon banner introducing Esther Lee Qian Hui, software student, builder and gamer" width="100%" />
+  <br /><br />
+  <strong>Esther Lee Qian Hui</strong> · IT (Software) student at UTeM · Malaysia
   <br />
-  <b>Software development student · Builder · Curious about better digital experiences</b>
-  <br />
-  <sub>Melaka, Malaysia · Open to learning, collaboration, and interesting problems</sub>
+  <sub>I build practical systems with a soft spot for thoughtful interfaces and a little bit of game energy.</sub>
 </div>
 
 <br />
 
-## A little about me
+## ✦ Player profile
 
-I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal Malaysia Melaka (UTeM)**. I enjoy turning messy workflows into clear, useful tools. My experience spans academic software projects, database-backed applications, and process automation during my application development internship.
+I enjoy the moment a confusing workflow starts to feel simple. My projects bring together **software logic, data, and the experience of using the product**. I'm still learning, building, and improving — and I like showing the decisions behind the finished work.
 
-- **Currently exploring:** software engineering, UI/UX, databases, and automation
-- **How I work:** understand the problem, build a working version, then refine the details
-- **What you'll find here:** projects with clear context, thoughtful decisions, and honest documentation
+`SOFTWARE DEVELOPMENT` &nbsp; `DATABASES` &nbsp; `UI/UX` &nbsp; `AUTOMATION`
 
-## My toolkit
-
-| Build | Data & workflow | Ways I work |
-| :--- | :--- | :--- |
-| C++ · SQL | MySQL · UiPath | Requirements · documentation · testing |
-
-*This is a snapshot of tools I've used, not a list of everything I'm learning.*
-
-## Selected work
+## ✦ Build log
 
 <table>
 <tr>
 <td width="50%" valign="top">
-<h3>◈ Intelligent Workflow Management System</h3>
-<p>A C++ and MySQL task management application with user roles, assignment workflows, status tracking, and reports.</p>
-<p><b>Focus:</b> application logic · relational data · usability in a CLI</p>
+<h3>01 / Intelligent Workflow Management System</h3>
+<p>A C++ and MySQL task management system with user roles, assignments, status updates and reports.</p>
+<p><sub>Academic project · C++ · MySQL · workflow design</sub></p>
 </td>
 <td width="50%" valign="top">
-<h3>◈ Hospital Patient Management System</h3>
-<p>An algorithm analysis project exploring sorting and searching performance using a large patient dataset.</p>
-<p><b>Focus:</b> data structures · performance comparisons · clear outputs</p>
+<h3>02 / Hospital Patient Management System</h3>
+<p>An algorithm analysis project comparing sorting and searching methods on a large patient dataset.</p>
+<p><sub>Team academic project · algorithms · performance analysis</sub></p>
 </td>
 </tr>
 </table>
 
-<!-- When a cleaned-up public repository exists, add a link under its card, such as:
-<p><a href="https://github.com/YOUR_USERNAME/YOUR_REPOSITORY">View project →</a></p>
-Do not publish coursework code or internship material without permission. -->
+<sub>These are project summaries. I'll link public code and demos here when they are ready.</sub>
 
-## Next on my workbench
+## ✦ Skill inventory
 
-I'm shaping my next public projects around **useful software with an enjoyable interface**. This space will grow as each project is built and documented.
+| Code & data | Systems & process | How I think |
+| :--- | :--- | :--- |
+| C++ · SQL · MySQL | UiPath · workflow automation | Requirements · documentation · testing |
 
-- A small product with a polished end-to-end user flow
-- A dashboard that turns raw information into clear decisions
-- An automation that saves someone repetitive work
+During my application development internship, I worked on fault reporting and ticketing workflows, plus SAP-related automation. That experience made me appreciate tools that save real people time.
 
-## Beyond the code
+## ✦ Next quests
 
-I like projects where both the **system behind the screen** and the **experience on the screen** matter. I have also worked on fault reporting, ticketing workflows, and SAP-related automation during my internship.
+- Build a small product with an interface people genuinely enjoy using.
+- Turn complicated information into a clear dashboard.
+- Share a useful automation with a measurable before-and-after story.
+
+## ✦ After hours
+
+Sometimes I'm debugging code; sometimes I'm queueing for a game. I enjoy **Valorant, Counter-Strike, Minecraft and Overwatch** — and I bring the same curiosity to both: learn the mechanics, try something, improve, repeat. 🎮
 
 <div align="center">
   <br />
-  <sub>Thanks for stopping by · More projects coming soon</sub>
+  <sub>Currently in build mode · Stay for the next release ✨</sub>
 </div>
