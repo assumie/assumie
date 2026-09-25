@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Esther Lee, software developer</title><desc id="desc">Dark navy profile banner with mint accents, Esther Lee typography and a stylized code panel.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101b29"/><stop offset="1" stop-color="#172d39"/></linearGradient>
+ <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7ce3c0" stop-opacity=".22"/><stop offset="1" stop-color="#7ce3c0" stop-opacity="0"/></linearGradient>
+ <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#75989a" stroke-opacity=".12" stroke-width="1"/></pattern>
+</defs>
+<rect width="1200" height="360" rx="24" fill="url(#bg)"/><rect width="1200" height="360" rx="24" fill="url(#grid)"/>
+<circle cx="1095" cy="20" r="300" fill="url(#glow)"/><circle cx="987" cy="190" r="148" fill="none" stroke="#80ddbc" opacity=".15"/><circle cx="987" cy="190" r="106" fill="none" stroke="#80ddbc" opacity=".13"/>
+<rect x="54" y="44" width="126" height="27" rx="13" fill="#7ce3c0" fill-opacity=".13" stroke="#7ce3c0" stroke-opacity=".45"/><text x="76" y="62" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2.4" fill="#93e9cc">HELLO, WORLD</text>
+<text x="52" y="166" font-family="Arial,Helvetica,sans-serif" font-size="74" font-weight="700" letter-spacing="-3" fill="#f0f5f5">Esther Lee<tspan fill="#7ce3c0">.</tspan></text>
+<rect x="54" y="187" width="52" height="4" rx="2" fill="#7ce3c0"/>
+<text x="54" y="224" font-family="Arial,Helvetica,sans-serif" font-size="22" fill="#c4d5d6">Software development  /  thoughtful interfaces</text>
+<text x="54" y="265" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#87a5aa">BUILDING USEFUL THINGS, ONE COMMIT AT A TIME.</text>
+<text x="54" y="319" font-family="Arial,Helvetica,sans-serif" font-size="12" letter-spacing="2" fill="#88b0b0">ESTHER LEE QIAN HUI  ·  MELAKA, MALAYSIA</text>
+<g transform="translate(845 79)"><rect width="302" height="205" rx="15" fill="#0d1924" stroke="#6ec7ad" stroke-opacity=".43"/><path d="M 0 39 H 302" stroke="#6ec7ad" stroke-opacity=".27"/><circle cx="22" cy="20" r="4" fill="#ff9083"/><circle cx="37" cy="20" r="4" fill="#e7c980"/><circle cx="52" cy="20" r="4" fill="#86d9b6"/><text x="227" y="24" font-family="monospace" font-size="10" fill="#668d94">profile.ts</text>
+<text x="22" y="74" font-family="monospace" font-size="14" fill="#7695a0">01</text><text x="55" y="74" font-family="monospace" font-size="14" fill="#8ee2c3">const</text><text x="108" y="74" font-family="monospace" font-size="14" fill="#e6eeed">esther = {</text>
+<text x="22" y="106" font-family="monospace" font-size="14" fill="#7695a0">02</text><text x="71" y="106" font-family="monospace" font-size="14" fill="#aac7d0">focus:</text><text x="131" y="106" font-family="monospace" font-size="14" fill="#efce95">'software'</text><text x="230" y="106" font-family="monospace" font-size="14" fill="#e6eeed">,</text>
+<text x="22" y="138" font-family="monospace" font-size="14" fill="#7695a0">03</text><text x="71" y="138" font-family="monospace" font-size="14" fill="#aac7d0">mindset:</text><text x="141" y="138" font-family="monospace" font-size="14" fill="#efce95">'curious'</text><text x="235" y="138" font-family="monospace" font-size="14" fill="#e6eeed">,</text>
+<text x="22" y="170" font-family="monospace" font-size="14" fill="#7695a0">04</text><text x="55" y="170" font-family="monospace" font-size="14" fill="#e6eeed">}</text><rect x="69" y="158" width="2" height="16" fill="#7ce3c0"/></g>
+</svg>
