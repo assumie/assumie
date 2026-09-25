@@ -4,6 +4,14 @@
 
 <br />
 
+<div align="center">
+  <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/"><strong>✦ FoodSnap &amp; Body — Live App Preview ↗</strong></a>
+  <br />
+  <sub>Photo meal journal · nutrition overview · weight trends</sub>
+</div>
+
+<br />
+
 <img src="assets/player-panel.svg" alt="Player profile: Esther Lee Qian Hui, software student at UTeM. Builder and learner focused on systems, data and interfaces." width="100%" />
 
 <br />
@@ -27,7 +35,7 @@ I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal M
 - **Hospital Patient Management System:** A team algorithm project comparing sorting and searching methods on a large dataset.
 - **Tools I've used:** C++, SQL, MySQL, UiPath, workflow automation, requirements, documentation, and testing.
 - **Internship experience:** Fault reporting, ticketing workflows, and SAP-related automation.
-- **Next projects:** A polished app, a clear dashboard, and a useful automation. I'll link public code and demos when ready.
+- **Current app preview:** [FoodSnap & Body](https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/) — a photo-based meal journal with nutrition and weight views. More project code and demos are coming.
 - **After hours:** Valorant, Counter-Strike, Minecraft, and Overwatch.
 
 </details>
