@@ -10,6 +10,12 @@
   </a>
 </div>
 
+<div align="center">
+  <a href="https://assumie.github.io/clutch-lab/">
+    <img src="assets/clutch-lab-feature.svg" alt="Clutch Lab featured project — click to try the CS2 practice journal demo" width="100%" />
+  </a>
+</div>
+
 <br />
 
 <img src="assets/player-panel.svg" alt="Player profile: Esther Lee Qian Hui, software student at UTeM. Builder and learner focused on systems, data and interfaces." width="100%" />
@@ -35,7 +41,8 @@ I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal M
 - **Hospital Patient Management System:** A team algorithm project comparing sorting and searching methods on a large dataset.
 - **Tools I've used:** C++, SQL, MySQL, UiPath, workflow automation, requirements, documentation, and testing.
 - **Internship experience:** Fault reporting, ticketing workflows, and SAP-related automation.
-- **Current app preview:** [FoodSnap & Body](https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/) — a photo-based meal journal with nutrition and weight views. More project code and demos are coming.
+- **FoodSnap & Body:** [Live preview](https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/) · [Project README](https://github.com/assumie/foodsnap-body) — a photo-based meal journal with nutrition and weight views.
+- **Clutch Lab:** [Live demo](https://assumie.github.io/clutch-lab/) · [Source and setup](https://github.com/assumie/clutch-lab) — a CS2 practice journal for reviewing match patterns.
 - **After hours:** Valorant, Counter-Strike, Minecraft, and Overwatch.
 
 </details>
