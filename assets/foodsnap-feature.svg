@@ -19,5 +19,5 @@
 <circle cx="841" cy="120" r="6" fill="none" stroke="#ff95ca" stroke-width="2.4"/>
 <path d="M 831 107 L 835 103 H 846 L 850 107" fill="none" stroke="#ff95ca" stroke-width="2.4" stroke-linejoin="round"/>
 <text x="882" y="112" fill="#cbb5e7" font-family="DejaVu Sans Mono, monospace" font-size="13" font-weight="700">OPEN PROJECT</text>
-<text x="882" y="142" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">View app preview  ↗</text>
+<text x="882" y="142" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700">View FoodSnap  ↗</text>
 </svg>
