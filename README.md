@@ -27,7 +27,7 @@
   </a>
 </div>
 <div align="right">
-  <a href="https://github.com/assumie/foodsnap-body"><img src="assets/notes-pill.svg" alt="Read FoodSnap project notes; source code is not published" width="172" /></a>
+  <a href="https://github.com/assumie/foodsnap-body"><img src="assets/notes-pill-v2.svg" alt="Read FoodSnap project notes; source code is not published" width="172" /></a>
 </div>
 
 <br />
