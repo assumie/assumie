@@ -41,6 +41,14 @@
 
 <br />
 
+<div align="center">
+  <img src="assets/quest-companions.gif" alt="A purple gamer kitten and a lavender bunny gently bobbing with twinkling stars" width="310" />
+  <br />
+  <sub>✦ My little coding companions · 我的编程小搭子 ✦</sub>
+</div>
+
+<br />
+
 <img src="assets/player-panel.svg" alt="Player profile: Esther Lee Qian Hui, software student at UTeM. Builder and learner focused on systems, data and interfaces." width="100%" />
 
 <br />
