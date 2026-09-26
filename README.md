@@ -5,6 +5,14 @@
 <br />
 
 <div align="center">
+  <a href="https://assumie.github.io/debug-dungeon/">
+    <img src="assets/debug-dungeon-feature.svg" alt="Debug Dungeon playable game — click to solve three code puzzles" width="100%" />
+  </a>
+</div>
+
+<br />
+
+<div align="center">
   <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/">
     <img src="assets/foodsnap-feature.svg" alt="FoodSnap & Body featured project — click to open the app preview" width="100%" />
   </a>
@@ -45,6 +53,7 @@ I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal M
 - **Internship experience:** Fault reporting, ticketing workflows, and SAP-related automation.
 - **FoodSnap & Body:** [Live preview](https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/) · [Project README](https://github.com/assumie/foodsnap-body) — a photo-based meal journal with nutrition and weight views.
 - **Clutch Lab:** [Live demo](https://assumie.github.io/clutch-lab/) · [Source and setup](https://github.com/assumie/clutch-lab) — a CS2 practice journal for reviewing match patterns.
+- **Debug Dungeon:** [Play the game](https://assumie.github.io/debug-dungeon/) · [Source and setup](https://github.com/assumie/debug-dungeon) — a three-room code adventure with a final boss based on a real Clutch Lab bug.
 - **After hours:** Valorant, Counter-Strike, Minecraft, and Overwatch.
 
 </details>
