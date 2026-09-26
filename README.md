@@ -6,7 +6,7 @@
 
 <div align="center">
   <a href="https://assumie.github.io/debug-dungeon/">
-    <img src="assets/debug-dungeon-feature.svg" alt="Debug Dungeon playable game — click to solve three code puzzles" width="100%" />
+    <img src="assets/debug-dungeon-feature-anime.svg" alt="Debug Dungeon playable game — click to solve three code puzzles" width="100%" />
   </a>
 </div>
 
