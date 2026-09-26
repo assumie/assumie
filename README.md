@@ -70,7 +70,7 @@
 
 I'm **Esther Lee Qian Hui**, an IT (Software) student at **Universiti Teknikal Malaysia Melaka (UTeM)**. I enjoy turning complicated workflows into practical tools with thoughtful interfaces.
 
-- **Intelligent Workflow Management System:** An academic C++ and MySQL task manager with roles, assignments, status updates, and reports.
+- **Intelligent Workflow Management System:** An academic C++ and MySQL task manager with roles, assignments, status updates, and reports. [Read the project case study](https://github.com/assumie/iwms-cpp-mysql) (original code and screenshots pending).
 - **Hospital Patient Management System:** A team algorithm project comparing sorting and searching methods on a large dataset.
 - **Tools I've used:** C++, SQL, MySQL, UiPath, workflow automation, requirements, documentation, and testing.
 - **Internship experience:** Fault reporting, ticketing workflows, and SAP-related automation.
