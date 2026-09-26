@@ -2,12 +2,20 @@
   <img src="assets/esther-banner.gif" alt="Animated purple and neon gamer banner introducing Esther Lee Qian Hui" width="100%" />
 </div>
 
+<div align="center">
+  <h2>Hi, I’m Esther 👾 · 你好，我是 Esther 仟彗</h2>
+  <p>Software student at UTeM. I build useful tools, playful interfaces, and small games inspired by real bugs.<br />
+  UTeM 软件系学生。喜欢做实用的小工具、好玩的界面，也会把真实的 bug 变成小游戏。</p>
+</div>
+
 <br />
 
 <div align="center">
   <a href="https://assumie.github.io/debug-dungeon/">
     <img src="assets/debug-dungeon-feature-anime.svg" alt="Debug Dungeon playable game — click to solve three code puzzles" width="100%" />
   </a>
+  <p>Code puzzles from a real bug · 把真实 bug 变成闯关小游戏<br />
+  <a href="https://assumie.github.io/debug-dungeon/">Play / 试玩 ↗</a> · <a href="https://github.com/assumie/debug-dungeon">Source / 查看源码 ↗</a></p>
 </div>
 
 <br />
@@ -16,6 +24,9 @@
   <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/">
     <img src="assets/foodsnap-feature-v2.svg" alt="FoodSnap & Body featured project — click to open the app preview" width="100%" />
   </a>
+  <p>Photo food journal &amp; weight trends · 拍照记录三餐与体重趋势<br />
+  <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/">Live preview / 预览 ↗</a> · <a href="https://github.com/assumie/foodsnap-body">Project notes / 项目介绍 ↗</a><br />
+  <sub>Preview only; source not published yet · 预览版，源码暂未公开</sub></p>
 </div>
 
 <br />
@@ -24,6 +35,8 @@
   <a href="https://assumie.github.io/clutch-lab/">
     <img src="assets/clutch-lab-feature.svg" alt="Clutch Lab featured project — click to try the CS2 practice journal demo" width="100%" />
   </a>
+  <p>CS2 practice journal · 复盘对局，找到下一场的练习目标<br />
+  <a href="https://assumie.github.io/clutch-lab/">Try demo / 体验 ↗</a> · <a href="https://github.com/assumie/clutch-lab">Source / 查看源码 ↗</a></p>
 </div>
 
 <br />
