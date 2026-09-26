@@ -14,7 +14,7 @@
 
 <div align="center">
   <a href="https://ais-pre-dsrhuffgag43w67cmsxg43-69964347795.asia-east1.run.app/">
-    <img src="assets/foodsnap-feature.svg" alt="FoodSnap & Body featured project — click to open the app preview" width="100%" />
+    <img src="assets/foodsnap-feature-v2.svg" alt="FoodSnap & Body featured project — click to open the app preview" width="100%" />
   </a>
 </div>
 
