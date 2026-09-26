@@ -10,6 +10,8 @@
   </a>
 </div>
 
+<br />
+
 <div align="center">
   <a href="https://assumie.github.io/clutch-lab/">
     <img src="assets/clutch-lab-feature.svg" alt="Clutch Lab featured project — click to try the CS2 practice journal demo" width="100%" />
