@@ -1,33 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" fill="none" role="img" aria-labelledby="title desc">
-<title id="title">Esther Lee Qian Hui — software development student</title>
-<desc id="desc">Minimal monochrome profile header with fine editorial rules and a compact CD labeled Assumie Mix 01.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Esther Lee Qian Hui — profile and music player</title>
+<desc id="desc">Minimal monochrome header with a slowly spinning CD, floating music notes, a progress bar, and music-player controls.</desc>
 <style>
-  :root { --ink:#333238; --muted:#77747C; --rule:#C9C7CC; --disc:#ECEBED; --shine:#B9B6BE; --label:#F8F7F8; }
-  @media (prefers-color-scheme:dark) { :root { --ink:#E6E4E8; --muted:#A09DA5; --rule:#4A474F; --disc:#28272D; --shine:#6D6973; --label:#44414A; } }
+  :root { --ink:#29282D; --muted:#77747C; --rule:#C9C7CC; --disc:#E7E6E9; --shine:#B5B2BA; --label:#F8F7F8; --accent:#817B88; }
+  @media (prefers-color-scheme:dark) { :root { --ink:#E6E4E8; --muted:#A09DA5; --rule:#4A474F; --disc:#28272D; --shine:#77737D; --label:#44414A; --accent:#B1ABB8; } }
   .mono { font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; }
-  .rise { opacity:0; animation:rise .75s cubic-bezier(.2,.7,.2,1) .2s forwards; }
-  @keyframes rise { to { opacity:1; } }
-  @media (prefers-reduced-motion:reduce) { .rise { animation:none; opacity:1; } }
+  .sans { font-family:Arial,Helvetica,sans-serif; }
+  .disc-spin { transform-box:fill-box; transform-origin:center; animation:spin 18s linear infinite; }
+  .note { transform-box:fill-box; transform-origin:center; animation:float 2.8s ease-in-out infinite; }
+  .note.delay { animation-delay:-1.4s; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  @keyframes float { 0%,100% { transform:translateY(2px); opacity:.48; } 50% { transform:translateY(-8px); opacity:1; } }
+  @media (prefers-reduced-motion:reduce) { .disc-spin,.note { animation:none; } }
 </style>
 <text class="mono" x="48" y="34" font-size="11" letter-spacing="3" fill="var(--muted)">ESTHER LEE QIAN HUI  /  ASSUMIE</text>
 <text class="mono" x="952" y="34" text-anchor="end" font-size="11" letter-spacing="3" fill="var(--muted)">MELAKA, MALAYSIA</text>
 <path d="M48 52H952" stroke="var(--rule)" stroke-width="1"/>
-<g class="rise">
-  <text class="mono" x="46" y="154" font-size="58" letter-spacing="-2.5" fill="var(--ink)">Esther Lee Qian Hui</text>
-  <text class="mono" x="49" y="194" font-size="16" fill="var(--muted)">Software development student · UTeM</text>
+<text class="mono" x="46" y="145" font-size="48" letter-spacing="-2.4" fill="var(--ink)">Esther Lee Qian Hui</text>
+<text class="mono" x="49" y="184" font-size="15" fill="var(--muted)">Software development student · UTeM</text>
+<text class="note sans" x="699" y="116" font-size="25" fill="var(--accent)">♪</text>
+<text class="note delay sans" x="922" y="220" font-size="20" fill="var(--accent)">♫</text>
+<g class="disc-spin" aria-label="Spinning CD labeled Assumie Mix 01">
+  <circle cx="817" cy="157" r="88" fill="var(--disc)" stroke="var(--rule)" stroke-width="1.2"/>
+  <circle cx="817" cy="157" r="77" stroke="var(--shine)" stroke-width="1"/>
+  <circle cx="817" cy="157" r="67" stroke="var(--shine)" stroke-width="1" opacity=".75"/>
+  <circle cx="817" cy="157" r="57" stroke="var(--shine)" stroke-width="1" opacity=".62"/>
+  <circle cx="817" cy="157" r="47" stroke="var(--shine)" stroke-width="1" opacity=".5"/>
+  <circle cx="817" cy="157" r="35" fill="var(--label)" stroke="var(--rule)" stroke-width="1"/>
+  <text class="mono" x="817" y="151" text-anchor="middle" font-size="5.8" letter-spacing="1.1" fill="var(--muted)">ASSUMIE</text>
+  <circle cx="817" cy="157" r="4" fill="var(--disc)" stroke="var(--rule)" stroke-width="1"/>
+  <text class="mono" x="817" y="172" text-anchor="middle" font-size="5.8" letter-spacing="1" fill="var(--muted)">MIX 01</text>
 </g>
-<g aria-label="CD illustration">
-  <circle cx="818" cy="166" r="99" fill="var(--disc)" stroke="var(--rule)" stroke-width="1.2"/>
-  <circle cx="818" cy="166" r="87" stroke="var(--shine)" stroke-width="1"/>
-  <circle cx="818" cy="166" r="77" stroke="var(--shine)" stroke-width="1" opacity=".72"/>
-  <circle cx="818" cy="166" r="66" stroke="var(--shine)" stroke-width="1" opacity=".62"/>
-  <circle cx="818" cy="166" r="55" stroke="var(--shine)" stroke-width="1" opacity=".54"/>
-  <circle cx="818" cy="166" r="43" fill="var(--label)" stroke="var(--rule)" stroke-width="1"/>
-  <text class="mono" x="818" y="158" text-anchor="middle" font-size="6.5" letter-spacing="1.4" fill="var(--muted)">ASSUMIE</text>
-  <circle cx="818" cy="166" r="4.5" fill="var(--disc)" stroke="var(--rule)" stroke-width="1"/>
-  <text class="mono" x="818" y="184" text-anchor="middle" font-size="6.5" letter-spacing="1.2" fill="var(--muted)">MIX 01</text>
+<g aria-label="Decorative music player controls">
+  <path d="M270 267H730" stroke="var(--rule)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M270 267H365" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="365" cy="267" r="8" fill="var(--ink)"/>
+  <path d="M375 317H392L404 306M375 317L392 317L404 329M375 317L392 329M392 317L404 306M392 317L404 329" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M440 303V331M440 317L463 303V331L440 317Z" fill="var(--ink)"/>
+  <circle cx="500" cy="317" r="29" fill="var(--ink)"/>
+  <path d="M493 305V329M507 305V329" stroke="var(--label)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M560 303V331M560 317L537 303V331L560 317Z" fill="var(--ink)"/>
+  <path d="M596 310C600 304 605 302 612 302H626L633 309M633 309V300M633 309H624M634 324C630 330 625 332 618 332H604L597 325M597 325V334M597 325H606" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<path d="M48 278H952" stroke="var(--rule)" stroke-width="1"/>
-<text class="mono" x="48" y="305" font-size="10" letter-spacing="2.4" fill="var(--muted)">SOFTWARE  ·  SMALL PROJECTS  ·  SINGING</text>
-<text class="mono" x="952" y="305" text-anchor="end" font-size="10" letter-spacing="2.4" fill="var(--muted)">PROFILE / 2026</text>
+<path d="M48 371H952" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono" x="48" y="398" font-size="10" letter-spacing="2.2" fill="var(--muted)">SOFTWARE  ·  SMALL PROJECTS  ·  SINGING</text>
+<text class="mono" x="952" y="398" text-anchor="end" font-size="10" letter-spacing="2.2" fill="var(--muted)">PROFILE / 2026</text>
 </svg>
