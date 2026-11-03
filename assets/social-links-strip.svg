@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 56" role="img" aria-labelledby="title desc">
+<title id="title">Esther's profile links</title>
+<desc id="desc">A row of compact rectangular labels for LinkedIn, DEV.to, Portfolio, Medium, Gmail, and Twitter. Add account destinations to make them clickable.</desc>
+<style>
+  .label { font-family:Georgia,"Times New Roman",serif; font-size:14px; font-weight:700; letter-spacing:2px; fill:#171717; }
+  .mark { font-family:Arial,Helvetica,sans-serif; font-size:10px; font-weight:700; fill:#171717; }
+</style>
+<g>
+  <rect x="108" y="7" width="125" height="42" fill="#d8d8d8"/>
+  <text class="mark" x="122" y="32">in</text><text class="label" x="148" y="33">LINKEDIN</text>
+  <rect x="239" y="7" width="121" height="42" fill="#d8d8d8"/>
+  <rect x="249" y="19" width="20" height="16" fill="#171717"/><text x="251" y="30" font-family="Arial,Helvetica,sans-serif" font-size="7" font-weight="700" fill="#f5f5f5">DEV</text><text class="label" x="276" y="33">DEV.TO</text>
+  <rect x="366" y="7" width="142" height="42" fill="#d8d8d8"/>
+  <path d="M378 20h14v1h-14zm0 6h14v1h-14zm0 6h14v1h-14z" fill="#171717"/><text class="label" x="400" y="33">PORTFOLIO</text>
+  <rect x="514" y="7" width="129" height="42" fill="#d8d8d8"/>
+  <text class="mark" x="526" y="32">M</text><text class="label" x="546" y="33">MEDIUM</text>
+  <rect x="649" y="7" width="117" height="42" fill="#d8d8d8"/>
+  <path d="M661 20h13l7 6 7-6h4v16h-4V26l-7 6-7-6v10h-4V20z" fill="#171717"/><text class="label" x="696" y="33">GMAIL</text>
+  <rect x="772" y="7" width="120" height="42" fill="#d8d8d8"/>
+  <path d="M783 19l13 16m0-16l-13 16" stroke="#171717" stroke-width="1.8"/><text class="label" x="803" y="33">TWITTER</text>
+</g>
+</svg>
