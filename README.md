@@ -7,5 +7,9 @@
 <p align="center">我喜欢把日常的小问题变成简单、实用，也有一点自己风格的作品。</p>
 
 <div align="center">
+  <img src="assets/social-links-strip.svg" alt="Profile link bar: LinkedIn, DEV.to, Portfolio, Medium, Gmail, and Twitter." width="100%" />
+</div>
+
+<div align="center">
   <img src="assets/skills-panel.svg" alt="Skills and tools: C++, Python, JavaScript, HTML, CSS, SQL, MySQL, Google Sheets, UiPath, n8n, Pabbly Connect, ROS Noetic, Gazebo, Linux, VMware, UI/UX, systems analysis, documentation, testing, Obsidian, Google Calendar, Git, GitHub, QGIS, and ArcGIS." width="100%" />
 </div>
