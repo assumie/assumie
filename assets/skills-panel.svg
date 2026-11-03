@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 365" role="img" aria-labelledby="title desc">
+<title id="title">Esther’s skills and tools</title>
+<desc id="desc">A single outlined panel grouping Esther’s programming, data, automation, systems, design, and workspace tools.</desc>
+<style>
+  :root { --ink:#333238; --muted:#77747C; --rule:#C9C7CC; --paper:#FFFFFF; }
+  @media (prefers-color-scheme:dark) { :root { --ink:#E6E4E8; --muted:#A09DA5; --rule:#4A474F; --paper:#0D1117; } }
+  .mono { font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; }
+  .sans { font-family:Arial,Helvetica,sans-serif; }
+</style>
+<rect x="16" y="16" width="968" height="333" rx="12" fill="var(--paper)" stroke="var(--rule)" stroke-width="1.3"/>
+<text class="mono" x="48" y="53" font-size="11" letter-spacing="2.6" fill="var(--muted)">SKILLS  /  TOOLS I USE</text>
+<path d="M48 70H952" stroke="var(--rule)" stroke-width="1"/>
+<g class="mono" font-size="11" letter-spacing="1.5" fill="var(--muted)">
+  <text x="48" y="105">CODE</text>
+  <text x="48" y="149">DATA</text>
+  <text x="48" y="193">AUTOMATION</text>
+  <text x="48" y="237">SYSTEMS</text>
+  <text x="48" y="281">DESIGN &amp; ANALYSIS</text>
+  <text x="48" y="325">WORKSPACE &amp; GIS</text>
+</g>
+<g class="sans" font-size="16" fill="var(--ink)">
+  <text x="280" y="105">C++  ·  Python  ·  JavaScript  ·  HTML  ·  CSS</text>
+  <text x="280" y="149">SQL  ·  MySQL  ·  Google Sheets</text>
+  <text x="280" y="193">UiPath  ·  n8n  ·  Pabbly Connect</text>
+  <text x="280" y="237">ROS Noetic  ·  Gazebo  ·  Linux  ·  VMware</text>
+  <text x="280" y="281">UI/UX  ·  Systems Analysis  ·  Documentation  ·  Testing</text>
+  <text x="280" y="325">Obsidian  ·  Google Calendar  ·  Git/GitHub  ·  QGIS  ·  ArcGIS</text>
+</g>
+<path d="M48 119H952M48 163H952M48 207H952M48 251H952M48 295H952" stroke="var(--rule)" stroke-width="1" opacity=".7"/>
+</svg>
