@@ -1,26 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-<title id="title">Esther Lee Qian Hui — creative software developer</title>
-<desc id="desc">Warm editorial portfolio banner on a paper background, with expressive abstract shapes, hand-drawn accents, and Esther's name.</desc>
-<rect width="1200" height="360" rx="24" fill="#F6F1E8"/>
-<path d="M0 292 C170 250 230 337 396 304 C552 274 597 331 725 292 L725 360 H0Z" fill="#E8DFD2"/>
-<circle cx="986" cy="180" r="154" fill="#E8D7D0"/>
-<path d="M914 260 C884 210 905 146 955 115 C985 95 1032 92 1065 109 C1018 123 989 151 975 190 C960 231 968 259 988 286 C959 287 933 279 914 260Z" fill="#889177"/>
-<path d="M927 261 C941 223 962 191 995 163" fill="none" stroke="#F6F1E8" stroke-width="4" stroke-linecap="round"/>
-<path d="M954 213 C935 208 924 196 918 181 M971 187 C973 168 985 153 1003 143 M941 236 C923 233 910 224 901 210" fill="none" stroke="#F6F1E8" stroke-width="3" stroke-linecap="round"/>
-<path d="M1054 95 C1071 75 1097 78 1107 97 C1117 117 1104 138 1080 143 C1056 147 1034 132 1036 113 C1038 105 1044 99 1054 95Z" fill="#CB786A"/>
-<path d="M1081 143 C1100 150 1118 170 1117 191 C1116 213 1099 226 1078 218 C1057 210 1046 188 1055 167 C1060 155 1070 147 1081 143Z" fill="#D69A83"/>
-<path d="M1080 143 C1064 132 1045 134 1035 149 C1024 165 1032 185 1054 195" fill="none" stroke="#6C526E" stroke-width="4" stroke-linecap="round"/>
-<path d="M1050 79 C1041 65 1044 50 1058 44 M1081 77 C1084 61 1098 53 1112 57 M1020 101 C1005 91 991 93 983 105" fill="none" stroke="#6C526E" stroke-width="3" stroke-linecap="round"/>
-<path d="M835 105 C843 95 851 87 864 81 M848 114 L864 114 M841 127 L853 127" fill="none" stroke="#CB786A" stroke-width="3" stroke-linecap="round"/>
-<path d="M1101 255 C1113 246 1124 242 1137 242 M1113 268 L1130 268 M1108 281 L1120 281" fill="none" stroke="#6C526E" stroke-width="3" stroke-linecap="round"/>
-<path d="M741 62 C758 47 774 48 785 63 C796 78 789 95 775 104 C760 113 740 106 734 91" fill="none" stroke="#CB786A" stroke-width="3" stroke-linecap="round"/>
-<text x="62" y="67" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#6C526E">ESTHER LEE QIAN HUI  ·  ASSUMIE</text>
-<text x="58" y="164" font-family="Georgia,'Times New Roman',serif" font-size="70" font-weight="700" letter-spacing="-2" fill="#292534">Code, colour</text>
-<text x="58" y="239" font-family="Georgia,'Times New Roman',serif" font-size="70" font-weight="700" letter-spacing="-2" fill="#292534">and curiosity<tspan fill="#CB786A">.</tspan></text>
-<path d="M61 270 C158 278 244 267 325 273" fill="none" stroke="#889177" stroke-width="4" stroke-linecap="round"/>
-<text x="62" y="318" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#57515E">Software student · creative builder · Melaka, Malaysia</text>
-<g transform="translate(690 294) rotate(-7)">
-<rect x="0" y="0" width="92" height="28" rx="14" fill="#6C526E"/>
-<text x="46" y="19" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="11" font-weight="700" letter-spacing="1.4" fill="#FFF9F0">MAKE · PLAY · REFINE</text>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Esther Lee Qian Hui — Esther, on repeat</title>
+<desc id="desc">A calm playlist-inspired profile cover with a simple vinyl record and the words software, little ideas, and the joy of making.</desc>
+<style>
+  :root { --paper:#F7F5F0; --ink:#302D35; --muted:#77727D; --line:#DDD8E2; --accent:#9B8AAD; --disc:#302D35; --label:#C9BED8; }
+  @media (prefers-color-scheme:dark) { :root { --paper:#0D1117; --ink:#EAE7EE; --muted:#A7A1AD; --line:#35313B; --accent:#B6A6C8; --disc:#222128; --label:#B6A6C8; } }
+  .sans { font-family:Arial,Helvetica,sans-serif; }
+  .serif { font-family:Georgia,'Times New Roman',serif; }
+  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; }
+</style>
+<rect width="1200" height="360" rx="16" fill="var(--paper)"/>
+<path d="M48 54H1152" stroke="var(--line)"/>
+<text class="mono" x="54" y="39" font-size="12" letter-spacing="2.5" fill="var(--muted)">ASSUMIE  /  PERSONAL MIX Nº 01</text>
+<text class="mono" x="1146" y="39" text-anchor="end" font-size="12" letter-spacing="2.5" fill="var(--muted)">MELAKA, MALAYSIA</text>
+<text class="serif" x="56" y="157" font-size="73" letter-spacing="-2" fill="var(--ink)">Esther, on repeat<tspan fill="var(--accent)">.</tspan></text>
+<text class="sans" x="59" y="202" font-size="21" fill="var(--muted)">Software, little ideas, and the joy of making.</text>
+<path d="M58 238H472" stroke="var(--line)"/>
+<text class="mono" x="59" y="273" font-size="12" letter-spacing="2" fill="var(--accent)">NOW PLAYING</text>
+<text class="sans" x="59" y="303" font-size="17" fill="var(--ink)">Creative experiments · thoughtful tools · workflow ideas</text>
+<circle cx="923" cy="190" r="132" fill="var(--disc)"/>
+<circle cx="923" cy="190" r="111" fill="none" stroke="var(--line)" stroke-opacity=".3"/>
+<circle cx="923" cy="190" r="91" fill="none" stroke="var(--line)" stroke-opacity=".26"/>
+<circle cx="923" cy="190" r="71" fill="none" stroke="var(--line)" stroke-opacity=".22"/>
+<circle cx="923" cy="190" r="51" fill="var(--label)"/>
+<circle cx="923" cy="190" r="7" fill="var(--paper)"/>
+<path d="M1058 119L1120 190L1058 261Z" fill="var(--accent)" opacity=".82"/>
+<circle cx="1080" cy="190" r="20" fill="var(--paper)"/>
+<path d="M1077 180L1087 190L1077 200Z" fill="var(--ink)"/>
+<text class="mono" x="923" y="194" text-anchor="middle" font-size="10" letter-spacing="1.6" fill="var(--ink)">SIDE A</text>
 </svg>
