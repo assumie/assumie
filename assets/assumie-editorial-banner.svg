@@ -1,30 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-<title id="title">Esther Lee Qian Hui — Esther, on repeat</title>
-<desc id="desc">A calm playlist-inspired profile cover with a simple vinyl record and the words software, little ideas, and the joy of making.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Esther Lee Qian Hui — software development student</title>
+<desc id="desc">Minimal monochrome profile header with fine editorial rules and a small hand-drawn sound wave.</desc>
 <style>
-  :root { --paper:#F7F5F0; --ink:#302D35; --muted:#77727D; --line:#DDD8E2; --accent:#9B8AAD; --disc:#302D35; --label:#C9BED8; }
-  @media (prefers-color-scheme:dark) { :root { --paper:#0D1117; --ink:#EAE7EE; --muted:#A7A1AD; --line:#35313B; --accent:#B6A6C8; --disc:#222128; --label:#B6A6C8; } }
-  .sans { font-family:Arial,Helvetica,sans-serif; }
-  .serif { font-family:Georgia,'Times New Roman',serif; }
-  .mono { font-family:ui-monospace,Menlo,Consolas,monospace; }
+  :root { --ink:#333238; --muted:#77747C; --rule:#C9C7CC; --wave:#88838F; }
+  @media (prefers-color-scheme:dark) { :root { --ink:#E6E4E8; --muted:#A09DA5; --rule:#4A474F; --wave:#A9A4AF; } }
+  .mono { font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace; }
+  .draw { stroke-dasharray:500; stroke-dashoffset:500; animation:draw 1.4s cubic-bezier(.6,0,.2,1) .25s forwards; }
+  .rise { opacity:0; animation:rise .75s cubic-bezier(.2,.7,.2,1) .2s forwards; }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+  @keyframes rise { to { opacity:1; } }
+  @media (prefers-reduced-motion:reduce) { .draw { animation:none; stroke-dashoffset:0; } .rise { animation:none; opacity:1; } }
 </style>
-<rect width="1200" height="360" rx="16" fill="var(--paper)"/>
-<path d="M48 54H1152" stroke="var(--line)"/>
-<text class="mono" x="54" y="39" font-size="12" letter-spacing="2.5" fill="var(--muted)">ASSUMIE  /  PERSONAL MIX Nº 01</text>
-<text class="mono" x="1146" y="39" text-anchor="end" font-size="12" letter-spacing="2.5" fill="var(--muted)">MELAKA, MALAYSIA</text>
-<text class="serif" x="56" y="157" font-size="73" letter-spacing="-2" fill="var(--ink)">Esther, on repeat<tspan fill="var(--accent)">.</tspan></text>
-<text class="sans" x="59" y="202" font-size="21" fill="var(--muted)">Software, little ideas, and the joy of making.</text>
-<path d="M58 238H472" stroke="var(--line)"/>
-<text class="mono" x="59" y="273" font-size="12" letter-spacing="2" fill="var(--accent)">NOW PLAYING</text>
-<text class="sans" x="59" y="303" font-size="17" fill="var(--ink)">Creative experiments · thoughtful tools · workflow ideas</text>
-<circle cx="923" cy="190" r="132" fill="var(--disc)"/>
-<circle cx="923" cy="190" r="111" fill="none" stroke="var(--line)" stroke-opacity=".3"/>
-<circle cx="923" cy="190" r="91" fill="none" stroke="var(--line)" stroke-opacity=".26"/>
-<circle cx="923" cy="190" r="71" fill="none" stroke="var(--line)" stroke-opacity=".22"/>
-<circle cx="923" cy="190" r="51" fill="var(--label)"/>
-<circle cx="923" cy="190" r="7" fill="var(--paper)"/>
-<path d="M1058 119L1120 190L1058 261Z" fill="var(--accent)" opacity=".82"/>
-<circle cx="1080" cy="190" r="20" fill="var(--paper)"/>
-<path d="M1077 180L1087 190L1077 200Z" fill="var(--ink)"/>
-<text class="mono" x="923" y="194" text-anchor="middle" font-size="10" letter-spacing="1.6" fill="var(--ink)">SIDE A</text>
+<text class="mono" x="48" y="34" font-size="11" letter-spacing="3" fill="var(--muted)">ESTHER LEE QIAN HUI  /  ASSUMIE</text>
+<text class="mono" x="952" y="34" text-anchor="end" font-size="11" letter-spacing="3" fill="var(--muted)">MELAKA, MALAYSIA</text>
+<path d="M48 52H952" stroke="var(--rule)" stroke-width="1"/>
+<g class="rise">
+  <text class="mono" x="46" y="154" font-size="58" letter-spacing="-2.5" fill="var(--ink)">Esther Lee Qian Hui</text>
+  <text class="mono" x="49" y="194" font-size="16" fill="var(--muted)">Software development student · UTeM</text>
+</g>
+<path class="draw" d="M711 236 C724 236 724 219 737 219 S750 253 763 253 776 206 789 206 802 246 815 246 828 226 841 226 854 236 867 236 880 217 893 217 906 240 919 240 932 228 952 228" stroke="var(--wave)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M48 278H952" stroke="var(--rule)" stroke-width="1"/>
+<text class="mono" x="48" y="305" font-size="10" letter-spacing="2.4" fill="var(--muted)">SOFTWARE  ·  SMALL PROJECTS  ·  SINGING</text>
+<text class="mono" x="952" y="305" text-anchor="end" font-size="10" letter-spacing="2.4" fill="var(--muted)">PROFILE / 2026</text>
 </svg>
