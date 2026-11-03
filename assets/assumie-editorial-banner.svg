@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" fill="none" role="img" aria-labelledby="title desc">
-<title id="title">Esther Lee Qian Hui — profile and music player</title>
-<desc id="desc">Minimal monochrome header with a slowly spinning CD, floating music notes, a progress bar, and music-player controls.</desc>
+<title id="title">Esther Lee Qian Hui — music-themed profile</title>
+<desc id="desc">Minimal monochrome music player with a rotating CD, floating notes, an animated progress bar, and softly pulsing controls.</desc>
 <style>
   :root { --ink:#29282D; --muted:#77747C; --rule:#C9C7CC; --disc:#E7E6E9; --shine:#B5B2BA; --label:#F8F7F8; --accent:#817B88; }
   @media (prefers-color-scheme:dark) { :root { --ink:#E6E4E8; --muted:#A09DA5; --rule:#4A474F; --disc:#28272D; --shine:#77737D; --label:#44414A; --accent:#B1ABB8; } }
@@ -9,9 +9,18 @@
   .disc-spin { transform-box:fill-box; transform-origin:center; animation:spin 18s linear infinite; }
   .note { transform-box:fill-box; transform-origin:center; animation:float 2.8s ease-in-out infinite; }
   .note.delay { animation-delay:-1.4s; }
+  .progress-fill { stroke-dasharray:460; stroke-dashoffset:460; animation:seek 24s linear infinite; }
+  .progress-knob { animation:slide 24s linear infinite; }
+  .control-soft { animation:breathe 2s ease-in-out infinite; }
+  .control-soft.delay { animation-delay:-1s; }
+  .play-disc { animation:beat 1.7s ease-in-out infinite; }
   @keyframes spin { to { transform:rotate(360deg); } }
   @keyframes float { 0%,100% { transform:translateY(2px); opacity:.48; } 50% { transform:translateY(-8px); opacity:1; } }
-  @media (prefers-reduced-motion:reduce) { .disc-spin,.note { animation:none; } }
+  @keyframes seek { to { stroke-dashoffset:0; } }
+  @keyframes slide { to { transform:translateX(460px); } }
+  @keyframes breathe { 0%,100% { opacity:.72; } 50% { opacity:1; } }
+  @keyframes beat { 0%,100% { opacity:.84; } 50% { opacity:1; } }
+  @media (prefers-reduced-motion:reduce) { .disc-spin,.note,.progress-fill,.progress-knob,.control-soft,.play-disc { animation:none; } .progress-fill { stroke-dashoffset:300; } .progress-knob { transform:translateX(160px); } }
 </style>
 <text class="mono" x="48" y="34" font-size="11" letter-spacing="3" fill="var(--muted)">ESTHER LEE QIAN HUI  /  ASSUMIE</text>
 <text class="mono" x="952" y="34" text-anchor="end" font-size="11" letter-spacing="3" fill="var(--muted)">MELAKA, MALAYSIA</text>
@@ -33,14 +42,18 @@
 </g>
 <g aria-label="Decorative music player controls">
   <path d="M270 267H730" stroke="var(--rule)" stroke-width="4" stroke-linecap="round"/>
-  <path d="M270 267H365" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
-  <circle cx="365" cy="267" r="8" fill="var(--ink)"/>
-  <path d="M375 317H392L404 306M375 317L392 317L404 329M375 317L392 329M392 317L404 306M392 317L404 329" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M440 303V331M440 317L463 303V331L440 317Z" fill="var(--ink)"/>
-  <circle cx="500" cy="317" r="29" fill="var(--ink)"/>
+  <path class="progress-fill" d="M270 267H730" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+  <circle class="progress-knob" cx="270" cy="267" r="8" fill="var(--ink)"/>
+  <g class="control-soft">
+    <path d="M375 317H392L404 306M375 317L392 317L404 329M375 317L392 329M392 317L404 306M392 317L404 329" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M440 303V331M440 317L463 303V331L440 317Z" fill="var(--ink)"/>
+  </g>
+  <circle class="play-disc" cx="500" cy="317" r="29" fill="var(--ink)"/>
   <path d="M493 305V329M507 305V329" stroke="var(--label)" stroke-width="4" stroke-linecap="round"/>
-  <path d="M560 303V331M560 317L537 303V331L560 317Z" fill="var(--ink)"/>
-  <path d="M596 310C600 304 605 302 612 302H626L633 309M633 309V300M633 309H624M634 324C630 330 625 332 618 332H604L597 325M597 325V334M597 325H606" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g class="control-soft delay">
+    <path d="M560 303V331M560 317L537 303V331L560 317Z" fill="var(--ink)"/>
+    <path d="M596 310C600 304 605 302 612 302H626L633 309M633 309V300M633 309H624M634 324C630 330 625 332 618 332H604L597 325M597 325V334M597 325H606" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
 </g>
 <path d="M48 371H952" stroke="var(--rule)" stroke-width="1"/>
 <text class="mono" x="48" y="398" font-size="10" letter-spacing="2.2" fill="var(--muted)">SOFTWARE  ·  SMALL PROJECTS  ·  SINGING</text>
