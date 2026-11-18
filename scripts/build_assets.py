@@ -35,13 +35,10 @@ TRACKS = [
     ("Intelligent Workflow", "C++ and MySQL task manager.", "https://github.com/assumie/iwms-cpp-mysql", False),
 ]
 
-# (label, url). Fill in the real links; "#" keeps the button visible but inert.
+# (label, url). Only links that exist; add DEV.to / Medium / X / Portfolio here when ready.
 LINKS = [
-    ("LinkedIn", "#"),
-    ("Portfolio", "#"),
-    ("DEV.to", "#"),
-    ("Medium", "#"),
-    ("X", "#"),
+    ("LinkedIn", "https://www.linkedin.com/in/esther0401/"),
+    ("Gmail", "mailto:leeqianhui938@gmail.com"),
     ("GitHub", "https://github.com/assumie"),
 ]
 

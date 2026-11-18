@@ -21,10 +21,7 @@
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/outro-dark.svg"><img src="assets/album/outro-light.svg" alt="Thanks for listening." width="100%"></picture>
 
 <p align="center">
-  <a href="#"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-linkedin-dark.svg"><img src="assets/album/btn-linkedin-light.svg" alt="LinkedIn" width="128"></picture></a>
-  <a href="#"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-portfolio-dark.svg"><img src="assets/album/btn-portfolio-light.svg" alt="Portfolio" width="128"></picture></a>
-  <a href="#"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-devto-dark.svg"><img src="assets/album/btn-devto-light.svg" alt="DEV.to" width="128"></picture></a>
-  <a href="#"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-medium-dark.svg"><img src="assets/album/btn-medium-light.svg" alt="Medium" width="128"></picture></a>
-  <a href="#"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-x-dark.svg"><img src="assets/album/btn-x-light.svg" alt="X" width="128"></picture></a>
+  <a href="https://www.linkedin.com/in/esther0401/"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-linkedin-dark.svg"><img src="assets/album/btn-linkedin-light.svg" alt="LinkedIn" width="128"></picture></a>
+  <a href="mailto:leeqianhui938@gmail.com"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-gmail-dark.svg"><img src="assets/album/btn-gmail-light.svg" alt="Gmail" width="128"></picture></a>
   <a href="https://github.com/assumie"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/btn-github-dark.svg"><img src="assets/album/btn-github-light.svg" alt="GitHub" width="128"></picture></a>
 </p>
