@@ -21,15 +21,26 @@ THEMES = {
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif"
 
-TRACKS = [  # (title, one line, tags, action)
-    ("Debug Dungeon", "Three code puzzles, patch shards, and a real final boss.",
-     "JAVASCRIPT · BROWSER GAME", "PLAY"),
-    ("Clutch Lab", "A CS2 match journal that finds duel patterns and one thing to practise.",
-     "WEB APP · PUBLIC SOURCE", "PLAY"),
-    ("FoodSnap & Body", "Photo meal journal with nutrition estimates and weight trends.",
-     "PERSONAL APP · IN PROGRESS", "SOURCE"),
-    ("Intelligent Workflow", "C++ and MySQL task manager: roles, assignments, status, reports.",
-     "C++ · MYSQL · ACADEMIC", "SOURCE"),
+PLAYER_URL = "https://assumie.github.io/assumie/player/"
+
+# (title, one line, link or None, playing?)  Playing tracks go first; the rest are stopped.
+TRACKS = [
+    ("EcoTech", "Asset maintenance scheduling. Flask + MySQL.", None, True),
+    ("ilm.io", "One upload, many ways to learn. Next.js + Supabase.", "https://github.com/assumie/ilm.io", True),
+    ("Debug Dungeon", "Code puzzles with a final boss.", "https://assumie.github.io/debug-dungeon/", False),
+    ("Clutch Lab", "CS2 match journal.", "https://assumie.github.io/clutch-lab/", False),
+    ("FoodSnap & Body", "Photo meal journal.", "https://github.com/assumie/foodsnap-body", False),
+    ("Intelligent Workflow", "C++ and MySQL task manager.", "https://github.com/assumie/iwms-cpp-mysql", False),
+]
+
+# (label, url). Fill in the real links; "#" keeps the button visible but inert.
+LINKS = [
+    ("LinkedIn", "#"),
+    ("Portfolio", "#"),
+    ("DEV.to", "#"),
+    ("Medium", "#"),
+    ("X", "#"),
+    ("GitHub", "https://github.com/assumie"),
 ]
 
 CREDITS = [
@@ -129,7 +140,6 @@ def hero(p):
         f'<path d="M{cx - 30} {cy + 92} A96 96 0 0 1 {cx - 92} {cy + 28}" stroke="{p["sheen"]}" stroke-width="2" stroke-linecap="round" opacity=".6"/>'
         f'<circle cx="{cx}" cy="{cy}" r="40" fill="{p["accent"]}"/>'
         + t(cx, cy - 12, "ASSUMIE", 8, p["label_ink"], anchor="middle", ls=2.4, weight=700)
-        + t(cx, cy + 20, "SIDE A · 33⅓", 6.5, p["label_ink"], anchor="middle", ls=1.4)
         + f'<circle cx="{cx}" cy="{cy}" r="3.5" fill="{p["disc"]}"/></g>')
     # tonearm resting on the outer grooves
     arm = (f'<g stroke="{p["muted"]}" stroke-linecap="round">'
@@ -140,23 +150,23 @@ def hero(p):
            f'fill="{p["muted"]}" stroke="none"/></g>')
     tl, tl_css = timeline(p)
     body = [
-        t(0, 22, "ASSUMIE  —  SIDE A", 11, p["muted"], ls=3),
-        t(600, 22, "SOFTWARE · PROJECTS · SINGING", 10, p["muted"], anchor="end", ls=2.2),
+        t(0, 22, "ASSUMIE", 11, p["muted"], ls=3),
         f'<path d="M0 40H600" stroke="{p["rule"]}"/>',
         t(-3, 118, "Esther Lee", 54, p["ink"], font=SANS, weight=600, ls=-1.6),
         t(-3, 178, "Qian Hui", 54, p["ink"], font=SANS, weight=600, ls=-1.6),
-        t(0, 214, "Software development student · UTeM · Melaka, Malaysia", 15, p["soft"], font=SANS),
+        t(0, 214, "Software student · UTeM · Melaka", 15, p["soft"], font=SANS),
         # now playing line
         eq_bars(0, 278, p["accent"]),
         t(32, 277, "NOW PLAYING", 11, p["accent"], ls=2.4, weight=700),
-        t(150, 277, "small, useful things — one side project at a time", 14, p["soft"], font=SANS),
+        t(150, 277, " · ".join(tr[0] for tr in TRACKS if tr[3]), 15, p["ink"], font=SANS, weight=600),
         tl,
         disc, arm,
+        t(cx, 336, "▶  CLICK THE RECORD TO PLAY", 10, p["accent"], anchor="middle", ls=2.2, weight=700),
     ]
     style = (".spin{transform-box:fill-box;transform-origin:center;animation:spin 20s linear infinite}"
              "@keyframes spin{to{transform:rotate(360deg)}}" + tl_css + EQ_CSS)
     return svg(1000, 350, "Esther Lee Qian Hui, software development student at UTeM. "
-               "A vinyl record spins next to a now-playing line.",
+               "Now playing: EcoTech and ilm.io. Click the record to play music.",
                f'<g transform="translate(4 0)">{"".join(body)}</g>', style)
 
 
@@ -166,18 +176,27 @@ def section_head(p, left, right):
     return svg(1000, 42, f"{left.title()}", body)
 
 
-def track(p, i, title, line, tags, action):
-    num = (eq_bars(2, 44, p["accent"], h=16) if i == 0
-           else t(0, 43, f"{i + 1:02d}", 14, p["muted"], ls=1))
-    arrow = "▶  PLAY" if action == "PLAY" else "↗  SOURCE"
-    body = (num
-            + t(64, 36, title, 21, p["ink"], font=SANS, weight=600, ls=-0.2)
-            + t(64, 60, line, 14, p["soft"], font=SANS)
-            + t(1000, 36, arrow, 11, p["accent"] if action == "PLAY" else p["ink"], anchor="end", ls=2, weight=700)
-            + t(1000, 60, tags, 10, p["muted"], anchor="end", ls=1.8)
+def track(p, i, title, line, link, playing):
+    if playing:
+        num = eq_bars(2, 44, p["accent"], h=16)
+        state = t(1000, 48, "●  PLAYING", 11, p["accent"], anchor="end", ls=2, weight=700)
+        title_c, line_c = p["ink"], p["soft"]
+    else:
+        num = t(0, 43, f"{i + 1:02d}", 14, p["muted"], ls=1)
+        state = t(1000, 48, "■  STOPPED", 11, p["muted"], anchor="end", ls=2)
+        title_c, line_c = p["soft"], p["muted"]
+    body = (num + t(64, 36, title, 21, title_c, font=SANS, weight=600, ls=-0.2)
+            + t(64, 60, line, 14, line_c, font=SANS) + state
             + f'<path d="M0 83H1000" stroke="{p["rule"]}"/>')
-    return svg(1000, 84, f"Track {i + 1}: {title}. {line} {tags.title()}. Click to {action.lower()}.",
-               body, EQ_CSS if i == 0 else "")
+    return svg(1000, 84, f"Track {i + 1}: {title}. {line} {'Playing' if playing else 'Stopped'}.",
+               body, EQ_CSS if playing else "")
+
+
+def button(p, label):
+    w = 128
+    body = (f'<rect x=".5" y=".5" width="{w - 1}" height="39" rx="20" stroke="{p["rule"]}" fill="none"/>'
+            + t(w / 2, 25, label.upper() + "  ↗", 11, p["ink"], anchor="middle", ls=1.8, weight=700))
+    return svg(w, 40, label, body)
 
 
 def credits(p):
@@ -193,33 +212,72 @@ def credits(p):
 
 
 def outro(p):
-    # a still waveform: the record has stopped
+    # a moving waveform: each bar breathes, and the staggered delays make a wave travel left to right
     import math
     bars = []
     for i in range(72):
-        h = 3 + 22 * abs(math.sin(i * 0.37) * math.sin(i * 0.11 + 1))
-        bars.append(f'<rect x="{214 + i * 8}" y="{40 - h / 2:.1f}" width="3" height="{h:.1f}" '
-                    f'rx="1.5" fill="{p["rule"]}"/>')
+        h = 6 + 22 * abs(math.sin(i * 0.37) * math.sin(i * 0.11 + 1))
+        bars.append(f'<rect class="w" style="animation-delay:-{(72 - i) * 0.06:.2f}s;animation-duration:'
+                    f'{1.8 + (i * 7 % 5) * 0.15:.2f}s" x="{214 + i * 8}" y="{40 - h / 2:.1f}" width="3" '
+                    f'height="{h:.1f}" rx="1.5" fill="{p["muted"]}"/>')
     body = ("".join(bars)
             + t(500, 92, "THANKS FOR LISTENING", 11, p["muted"], anchor="middle", ls=3.4))
-    return svg(1000, 100, "Thanks for listening.", body)
+    css = (".w{transform-box:fill-box;transform-origin:center;opacity:.55;"
+           "animation:w 2s ease-in-out infinite alternate}"
+           "@keyframes w{0%{transform:scaleY(.2)}100%{transform:scaleY(1)}}")
+    return svg(1000, 100, "Thanks for listening.", body, css)
 
 
 def main():
+    global START
+    import time
+    START = time.time() - 1
     OUT.mkdir(parents=True, exist_ok=True)
     for name, p in THEMES.items():
         files = {
             "hero": hero(p),
-            "head-tracklist": section_head(p, "TRACKLIST", f"{len(TRACKS):02d} TRACKS · STILL RECORDING"),
-            "head-liner": section_head(p, "LINER NOTES", "INSTRUMENTS & TOOLS"),
+            "head-tracklist": section_head(p, "TRACKLIST", f"{len(TRACKS):02d} TRACKS"),
+            "head-liner": section_head(p, "LINER NOTES", "TOOLS"),
             "liner": credits(p),
             "outro": outro(p),
         }
         for i, tr in enumerate(TRACKS):
             files[f"track-{i + 1:02d}"] = track(p, i, *tr)
+        for label, _ in LINKS:
+            files["btn-" + slug(label)] = button(p, label)
         for stem, content in files.items():
             (OUT / f"{stem}-{name}.svg").write_text(content, encoding="utf-8")
-    print(f"wrote {len(list(OUT.glob('*.svg')))} files to {OUT}")
+    for old in OUT.glob("*.svg"):  # drop artwork for tracks that no longer exist
+        if old.stat().st_mtime < START:
+            old.unlink()
+    write_readme()
+    print(f"wrote {len(list(OUT.glob('*.svg')))} files to {OUT} and README.md")
+
+
+def slug(s):
+    return "".join(c for c in s.lower() if c.isalnum())
+
+
+def pic(stem, alt, width="100%"):
+    return (f'<picture><source media="(prefers-color-scheme: dark)" srcset="assets/album/{stem}-dark.svg">'
+            f'<img src="assets/album/{stem}-light.svg" alt="{escape(alt)}" width="{width}"></picture>')
+
+
+def write_readme():
+    out = [f'<a href="{PLAYER_URL}">' + pic("hero", "Esther Lee Qian Hui. Click the record to play music.") + "</a>",
+           "",
+           "<p>Hi, I’m Esther. I study software development at UTeM and enjoy making useful things, "
+           "trying out ideas, and learning as I go.<br>\n我喜欢把日常的小问题变成简单、实用，也有一点自己风格的作品。</p>",
+           "", pic("head-tracklist", "Tracklist")]
+    for i, (title, line, link, playing) in enumerate(TRACKS):
+        img = pic(f"track-{i + 1:02d}", f"{i + 1:02d} {title}: {line} {'Playing' if playing else 'Stopped'}.")
+        out.append(f'<a href="{link}">{img}</a>' if link else img)
+    out += ["", "<br>", "", pic("head-liner", "Liner notes: tools"), pic("liner", "Tools: " + "; ".join(
+        f"{k}: {v.replace('  ·  ', ', ')}" for k, v in CREDITS)), "", "<br>", "", pic("outro", "Thanks for listening."),
+        "", '<p align="center">']
+    out += [f'  <a href="{url}">{pic("btn-" + slug(label), label, "128")}</a>' for label, url in LINKS]
+    out += ["</p>", ""]
+    (OUT.parent.parent / "README.md").write_text("\n".join(out), encoding="utf-8")
 
 
 if __name__ == "__main__":

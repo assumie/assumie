@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assumie — Side A</title>
+<meta name="description" content="Esther's record player. Press play.">
+<style>
+  :root {
+    --bg:#FFFFFF; --ink:#1F2328; --soft:#424A53; --muted:#6E7781; --rule:#D0D7DE;
+    --disc:#16181C; --groove:#2A2F36; --sheen:#5A626D; --accent:#D4493F; --label-ink:#FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0D1117; --ink:#E6EDF3; --soft:#B1BAC4; --muted:#7D8590; --rule:#30363D;
+      --disc:#0B0D10; --groove:#1F242B; --sheen:#3A414B; --accent:#F0766B; --label-ink:#0D1117;
+    }
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--ink); }
+  body {
+    font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    min-height:100vh; display:grid; place-items:center; padding:32px 16px;
+  }
+  .mono { font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; letter-spacing:.18em; text-transform:uppercase; font-size:11px; }
+  main { width:100%; max-width:440px; }
+  header { display:flex; justify-content:space-between; color:var(--muted); padding-bottom:12px; border-bottom:1px solid var(--rule); }
+  header a { color:inherit; text-decoration:none; }
+  header a:hover { color:var(--ink); }
+
+  .deck { position:relative; width:100%; aspect-ratio:1; margin:36px 0 28px; }
+  .record {
+    position:absolute; inset:6% 12% 6% 0; border:0; padding:0; background:none; cursor:pointer;
+    border-radius:50%;
+  }
+  .record:focus-visible { outline:2px solid var(--accent); outline-offset:6px; }
+  .record svg { width:100%; height:100%; display:block; }
+  .arm {
+    position:absolute; right:2%; top:2%; width:26%; height:70%;
+    transform-origin:78% 8%; transform:rotate(-24deg);
+    transition:transform .9s cubic-bezier(.5,0,.2,1);
+    pointer-events:none;
+  }
+  .playing .arm { transform:rotate(0deg); }
+
+  h1 { font-size:26px; font-weight:600; letter-spacing:-.01em; margin:0; }
+  .now { color:var(--accent); margin-bottom:4px; min-height:16px; }
+  .sub { color:var(--soft); margin:2px 0 0; }
+
+  .timeline { margin:24px 0 8px; }
+  input[type=range] { width:100%; margin:0; appearance:none; background:transparent; height:18px; cursor:pointer; }
+  input[type=range]::-webkit-slider-runnable-track { height:3px; border-radius:2px; background:linear-gradient(var(--ink),var(--ink)) 0/var(--p,0%) 100% no-repeat, var(--rule); }
+  input[type=range]::-moz-range-track { height:3px; border-radius:2px; background:var(--rule); }
+  input[type=range]::-moz-range-progress { height:3px; border-radius:2px; background:var(--ink); }
+  input[type=range]::-webkit-slider-thumb { appearance:none; width:12px; height:12px; border-radius:50%; background:var(--ink); margin-top:-4.5px; border:0; }
+  input[type=range]::-moz-range-thumb { width:12px; height:12px; border-radius:50%; background:var(--ink); border:0; }
+  input[type=range]:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+  .times { display:flex; justify-content:space-between; color:var(--muted); letter-spacing:.05em; }
+
+  .controls { display:flex; justify-content:center; margin-top:20px; }
+  .play {
+    width:64px; height:64px; border-radius:50%; border:0; cursor:pointer;
+    background:var(--ink); color:var(--bg); display:grid; place-items:center;
+  }
+  .play:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+  .play svg { width:22px; height:22px; }
+  .hint { text-align:center; color:var(--muted); margin-top:16px; }
+</style>
+</head>
+<body>
+<main id="app">
+  <header class="mono">
+    <span>Assumie</span>
+    <a href="https://github.com/assumie">← GitHub</a>
+  </header>
+
+  <div class="deck">
+    <button class="record" id="record" aria-label="Play">
+      <svg viewBox="0 0 240 240" aria-hidden="true">
+        <g id="disc">
+          <circle cx="120" cy="120" r="118" fill="var(--disc)" stroke="var(--rule)"/>
+          <g id="grooves"></g>
+          <path d="M150 28 A96 96 0 0 1 212 92" stroke="var(--sheen)" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M90 212 A96 96 0 0 1 28 148" stroke="var(--sheen)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".6"/>
+          <circle cx="120" cy="120" r="40" fill="var(--accent)"/>
+          <text x="120" y="110" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="8" font-weight="700" letter-spacing="2.4" fill="var(--label-ink)">ASSUMIE</text>
+          <circle cx="120" cy="120" r="3.5" fill="var(--disc)"/>
+        </g>
+      </svg>
+    </button>
+    <svg class="arm" viewBox="0 0 80 220" aria-hidden="true">
+      <g stroke="var(--muted)" stroke-linecap="round" fill="none">
+        <circle cx="62" cy="18" r="11" stroke-width="1.5"/>
+        <circle cx="62" cy="18" r="3" fill="var(--muted)" stroke="none"/>
+        <path d="M62 18 L48 168 L22 200" stroke-width="3"/>
+        <rect x="10" y="194" width="18" height="10" rx="2" fill="var(--muted)" stroke="none" transform="rotate(40 19 199)"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="now mono" id="now" aria-live="polite"></div>
+  <h1 id="title">Side A</h1>
+  <p class="sub">Esther Lee Qian Hui</p>
+
+  <div class="timeline">
+    <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Seek">
+    <div class="times mono"><span id="elapsed">0:00</span><span id="total">0:00</span></div>
+  </div>
+
+  <div class="controls">
+    <button class="play" id="play" aria-label="Play">
+      <svg viewBox="0 0 24 24" id="icon"><path d="M7 4v16l13-8z" fill="currentColor"/></svg>
+    </button>
+  </div>
+  <p class="hint mono">Space to play / pause</p>
+</main>
+
+<script>
+/* Swap in your own recording: set AUDIO_SRC to an mp3/m4a in this folder, e.g. "side-a.mp3".
+   Left empty, the page plays an original tune synthesized in the browser. */
+const AUDIO_SRC = "";
+
+const $ = id => document.getElementById(id);
+const app = $("app"), discEl = $("disc"), seek = $("seek");
+const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// grooves
+$("grooves").innerHTML = Array.from({length: 10}, (_, i) =>
+  `<circle cx="120" cy="120" r="${48 + i * 7}" stroke="var(--groove)" fill="none"/>`).join("");
+
+/* ---------- engine: either a real file or the built-in synth ---------- */
+function fileEngine(src) {
+  const a = new Audio(src);
+  a.loop = true;
+  return {
+    get duration() { return a.duration || 0; },
+    get time() { return a.currentTime; },
+    play() { return a.play(); },
+    pause() { a.pause(); },
+    seek(t) { a.currentTime = t; },
+  };
+}
+
+function synthEngine() {
+  // An original 4-chord lo-fi loop: Fmaj7 · Em7 · Dm7 · Cmaj7, 76 bpm.
+  const BPM = 76, BEAT = 60 / BPM, BAR = BEAT * 4, BARS = 64, LEN = BAR * BARS;
+  const CHORDS = [[53, 57, 60, 64], [52, 55, 59, 62], [50, 53, 57, 60], [48, 52, 55, 59]];
+  const SCALE = [60, 62, 64, 67, 69, 72, 74, 76];
+  const hz = m => 440 * Math.pow(2, (m - 69) / 12);
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  // fixed melody so it sounds the same every time
+  const melody = Array.from({length: BARS}, (_, b) => Array.from({length: 8}, (_, s) => {
+    const rest = rnd() < (b % 16 < 4 ? 0.85 : 0.55);
+    return rest ? null : SCALE[Math.floor(rnd() * SCALE.length)];
+  }));
+
+  let ctx, out, startAt = 0, offset = 0, playing = false, nextBar = 0, timer, crackle;
+
+  function tone(freq, t, dur, vol, type = "sine") {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g).connect(out); o.start(t); o.stop(t + dur + 0.05);
+  }
+  function noise(t, dur, vol, hp) {
+    const len = Math.ceil(ctx.sampleRate * dur), buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = buf.getChannelData(0); for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    const s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = buf; f.type = "highpass"; f.frequency.value = hp;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    s.connect(f).connect(g).connect(out); s.start(t);
+  }
+  function kick(t) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.setValueAtTime(110, t); o.frequency.exponentialRampToValueAtTime(42, t + 0.18);
+    g.gain.setValueAtTime(0.5, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.35);
+    o.connect(g).connect(out); o.start(t); o.stop(t + 0.4);
+  }
+  function scheduleBar(bar, t) {
+    const chord = CHORDS[bar % 4], intro = bar < 4, outro = bar >= BARS - 2;
+    chord.forEach((n, i) => tone(hz(n), t + i * 0.012, BAR * 0.95, 0.07, "triangle"));
+    tone(hz(chord[0] - 12), t, BEAT * 1.8, 0.16);
+    tone(hz(chord[0] - 12), t + BEAT * 2.5, BEAT * 1.2, 0.12);
+    if (!intro && !outro) {
+      kick(t); kick(t + BEAT * 2.5);
+      noise(t + BEAT, 0.12, 0.08, 1800); noise(t + BEAT * 3, 0.12, 0.08, 1800);
+      for (let i = 0; i < 8; i++) noise(t + i * BEAT / 2 + (i % 2 ? 0.03 : 0), 0.04, 0.025, 7000);
+    }
+    melody[bar].forEach((n, i) => { if (n && !intro) tone(hz(n), t + i * BEAT / 2, BEAT * 0.9, 0.06); });
+  }
+  function startCrackle() {
+    const len = ctx.sampleRate * 2, buf = ctx.createBuffer(1, len, ctx.sampleRate), d = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random() < 0.0008 ? (Math.random() * 2 - 1) * 0.6 : (Math.random() * 2 - 1) * 0.004;
+    crackle = ctx.createBufferSource(); crackle.buffer = buf; crackle.loop = true;
+    crackle.connect(out); crackle.start();
+  }
+  function tick() {
+    // schedule bars ~1.5s ahead of the playhead
+    for (;;) {
+      const when = startAt + (nextBar * BAR - offset);
+      if (when > ctx.currentTime + 1.5) break;
+      scheduleBar(nextBar % BARS, Math.max(when, ctx.currentTime));
+      nextBar++;
+    }
+  }
+  return {
+    duration: LEN,
+    get time() { return playing ? (offset + ctx.currentTime - startAt) % LEN : offset % LEN; },
+    async play() {
+      if (!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+      await ctx.resume();
+      // a fresh output bus per play, so notes scheduled before a pause never leak through
+      const lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 2600;
+      lp.connect(ctx.destination);
+      out = ctx.createGain(); out.gain.value = 0.0001; out.connect(lp);
+      out.gain.exponentialRampToValueAtTime(0.9, ctx.currentTime + 0.6);
+      startAt = ctx.currentTime;
+      nextBar = Math.ceil(offset / BAR - 1e-6);
+      playing = true; startCrackle(); tick(); timer = setInterval(tick, 250);
+    },
+    pause() {
+      if (!playing) return;
+      offset = this.time; playing = false; clearInterval(timer);
+      const g = out; g.gain.cancelScheduledValues(ctx.currentTime);
+      g.gain.setValueAtTime(g.gain.value, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
+      setTimeout(() => g.disconnect(), 400);
+      try { crackle.stop(); } catch (e) {}
+    },
+    seek(t) {
+      const was = playing; if (was) this.pause(); offset = t; if (was) this.play();
+    },
+  };
+}
+
+const engine = AUDIO_SRC ? fileEngine(AUDIO_SRC) : synthEngine();
+$("title").textContent = "Side A";
+
+/* ---------- UI ---------- */
+let playing = false, angle = 0, speed = 0, last = performance.now(), dragging = false;
+const RPM_DEG = 360 / 1.8; // 33⅓ rpm
+
+function setPlaying(on) {
+  playing = on;
+  app.classList.toggle("playing", on);
+  const label = on ? "Pause" : "Play";
+  $("play").setAttribute("aria-label", label); $("record").setAttribute("aria-label", label);
+  $("icon").innerHTML = on
+    ? '<path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/>'
+    : '<path d="M7 4v16l13-8z" fill="currentColor"/>';
+  $("now").textContent = on ? "● Now playing" : "";
+}
+async function toggle() {
+  if (playing) { engine.pause(); setPlaying(false); }
+  else { await engine.play(); setPlaying(true); }
+}
+$("play").addEventListener("click", toggle);
+$("record").addEventListener("click", toggle);
+document.addEventListener("keydown", e => {
+  if (e.code === "Space" && !["BUTTON", "INPUT"].includes(document.activeElement.tagName)) { e.preventDefault(); toggle(); }
+});
+seek.addEventListener("input", () => { dragging = true; paintSeek(seek.value / 1000); $("elapsed").textContent = fmt(seek.value / 1000 * engine.duration); });
+seek.addEventListener("change", () => { engine.seek(seek.value / 1000 * engine.duration); dragging = false; });
+
+function paintSeek(f) { seek.style.setProperty("--p", (f * 100).toFixed(2) + "%"); }
+
+function frame(now) {
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  // the platter spins up and winds down like a real turntable
+  const target = playing ? RPM_DEG : 0;
+  speed += (target - speed) * Math.min(1, dt * (playing ? 1.6 : 1.1));
+  if (!reduceMotion) { angle = (angle + speed * dt) % 360; discEl.setAttribute("transform", `rotate(${angle} 120 120)`); }
+  const d = engine.duration;
+  if (d) {
+    $("total").textContent = fmt(d);
+    if (!dragging) { const t = engine.time; seek.value = Math.round(t / d * 1000); paintSeek(t / d); $("elapsed").textContent = fmt(t); }
+  }
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
