@@ -21,6 +21,8 @@ THEMES = {
 MONO = "ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"
 SANS = "-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif"
 
+NOW_PLAYING = ("Right Now", "Akon")  # (song, artist) shown in the hero
+
 PLAYER_URL = "https://assumie.github.io/assumie/player/"
 
 # (title, one line, link or None, playing?)  Playing tracks go first; the rest are stopped.
@@ -158,7 +160,9 @@ def hero(p):
         # now playing line
         eq_bars(0, 278, p["accent"]),
         t(32, 277, "NOW PLAYING", 11, p["accent"], ls=2.4, weight=700),
-        t(150, 277, " · ".join(tr[0] for tr in TRACKS if tr[3]), 15, p["ink"], font=SANS, weight=600),
+        (f'<text x="150" y="277" font-family="{SANS}" font-size="15" fill="{p["ink"]}">'
+         f'<tspan font-weight="600">{escape(NOW_PLAYING[0])}</tspan>'
+         f'<tspan fill="{p["soft"]}">  —  {escape(NOW_PLAYING[1])}</tspan></text>'),
         tl,
         disc, arm,
         t(cx, 336, "▶  CLICK THE RECORD TO PLAY", 10, p["accent"], anchor="middle", ls=2.2, weight=700),
@@ -166,7 +170,7 @@ def hero(p):
     style = (".spin{transform-box:fill-box;transform-origin:center;animation:spin 20s linear infinite}"
              "@keyframes spin{to{transform:rotate(360deg)}}" + tl_css + EQ_CSS)
     return svg(1000, 350, "Esther Lee Qian Hui, software development student at UTeM. "
-               "Now playing: EcoTech and ilm.io. Click the record to play music.",
+               f"Now playing: {NOW_PLAYING[0]} by {NOW_PLAYING[1]}. Click the record to play music.",
                f'<g transform="translate(4 0)">{"".join(body)}</g>', style)
 
 

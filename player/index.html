@@ -64,6 +64,9 @@
   }
   .play:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
   .play svg { width:22px; height:22px; }
+  .fav { color:var(--muted); margin:14px 0 0; letter-spacing:.12em; line-height:1.9; }
+  .fav a { color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule); }
+  .fav a:hover, .fav a:focus-visible { border-color:var(--accent); }
   .hint { text-align:center; color:var(--muted); margin-top:16px; }
 </style>
 </head>
@@ -101,6 +104,9 @@
   <div class="now mono" id="now" aria-live="polite"></div>
   <h1 id="title">Side A</h1>
   <p class="sub">Esther Lee Qian Hui</p>
+  <p class="fav mono">On repeat: Right Now — Akon ·
+    <a href="https://open.spotify.com/search/Akon%20Right%20Now">Spotify ↗</a> ·
+    <a href="https://www.youtube.com/results?search_query=Akon+Right+Now">YouTube ↗</a></p>
 
   <div class="timeline">
     <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Seek">
