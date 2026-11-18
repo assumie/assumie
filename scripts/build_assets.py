@@ -57,7 +57,7 @@ def t(x, y, s, size, fill, font=MONO, anchor="start", ls=0, weight=400, cls=""):
             f'fill="{fill}">{escape(s)}</text>')
 
 
-def eq_bars(x, y, c, n=4, h=14, w=3, gap=3, dur=(0.9, 1.3, 0.7, 1.1)):
+def eq_bars(x, y, c, n=4, h=14, w=3, gap=3, dur=(2.2, 2.8, 1.9, 2.5)):
     """Equalizer bars: the universal 'this is playing' signal."""
     out = []
     for i in range(n):
@@ -68,8 +68,51 @@ def eq_bars(x, y, c, n=4, h=14, w=3, gap=3, dur=(0.9, 1.3, 0.7, 1.1)):
     return "".join(out)
 
 
-EQ_CSS = (".eq{transform-box:fill-box;transform-origin:bottom;animation:eq 1s ease-in-out infinite alternate}"
-          "@keyframes eq{0%{transform:scaleY(.25)}100%{transform:scaleY(1)}}")
+EQ_CSS = (".eq{transform-box:fill-box;transform-origin:bottom;animation:eq 2s ease-in-out infinite alternate}"
+          "@keyframes eq{0%{transform:scaleY(.4)}100%{transform:scaleY(1)}}")
+
+
+SONG_SECONDS = 210  # 3:30, the length of one loop of the timeline
+
+
+def digit_column(x, y, fill, values, size=11, lh=16):
+    """One odometer digit: a column of 0-9 that jumps (step-end) to the value for each second."""
+    loop = len(values)
+    frames, last = [], None
+    for sec, v in enumerate(values):
+        if v != last:
+            frames.append(f"{sec / loop * 100:.4f}%{{transform:translateY({-v * lh}px)}}")
+            last = v
+    frames.append(f"100%{{transform:translateY({-values[-1] * lh}px)}}")
+    name = f"d{x}"
+    digits = "".join(t(x, y + d * lh, str(d), size, fill) for d in range(10))
+    css = (f".{name}{{animation:{name} {loop}s step-end infinite}}"
+           f"@keyframes {name}{{{''.join(frames)}}}")
+    return f'<g clip-path="url(#clip{x})"><g class="{name}">{digits}</g></g>', \
+        f'<clipPath id="clip{x}"><rect x="{x - 1}" y="{y - size}" width="10" height="{size + 4}"/></clipPath>', css
+
+
+def timeline(p, y=318, w=600):
+    secs = range(SONG_SECONDS)
+    cols = [(0, [s // 60 for s in secs]), (14, [(s % 60) // 10 for s in secs]), (21, [s % 10 for s in secs])]
+    parts, clips, css = [], [], []
+    for x, vals in cols:
+        g, c, k = digit_column(x, y + 26, p["soft"], vals)
+        parts.append(g); clips.append(c); css.append(k)
+    m, ss = divmod(SONG_SECONDS, 60)
+    svgp = [
+        f'<defs>{"".join(clips)}</defs>',
+        f'<path d="M0 {y}H{w}" stroke="{p["rule"]}" stroke-width="3" stroke-linecap="round"/>',
+        f'<path class="seek" d="M0 {y}H{w}" stroke="{p["ink"]}" stroke-width="3" stroke-linecap="round"/>',
+        f'<circle class="knob" cx="0" cy="{y}" r="6" fill="{p["ink"]}"/>',
+        *parts, t(7, y + 26, ":", 11, p["soft"]),
+        t(w, y + 26, f"{m}:{ss:02d}", 11, p["muted"], anchor="end"),
+    ]
+    css.append(f".seek{{stroke-dasharray:{w};stroke-dashoffset:{w};animation:seek {SONG_SECONDS}s linear infinite}}"
+               f"@keyframes seek{{to{{stroke-dashoffset:0}}}}"
+               f".knob{{animation:knob {SONG_SECONDS}s linear infinite}}"
+               f"@keyframes knob{{to{{transform:translateX({w}px)}}}}")
+    return "".join(svgp), "".join(css)
 
 
 def hero(p):
@@ -95,8 +138,10 @@ def hero(p):
            f'<path d="M958 52 L930 196 L896 236" stroke-width="3"/>'
            f'<rect x="884" y="230" width="16" height="10" rx="2" transform="rotate(38 892 235)" '
            f'fill="{p["muted"]}" stroke="none"/></g>')
+    tl, tl_css = timeline(p)
     body = [
         t(0, 22, "ASSUMIE  —  SIDE A", 11, p["muted"], ls=3),
+        t(600, 22, "SOFTWARE · PROJECTS · SINGING", 10, p["muted"], anchor="end", ls=2.2),
         f'<path d="M0 40H600" stroke="{p["rule"]}"/>',
         t(-3, 118, "Esther Lee", 54, p["ink"], font=SANS, weight=600, ls=-1.6),
         t(-3, 178, "Qian Hui", 54, p["ink"], font=SANS, weight=600, ls=-1.6),
@@ -105,20 +150,11 @@ def hero(p):
         eq_bars(0, 278, p["accent"]),
         t(32, 277, "NOW PLAYING", 11, p["accent"], ls=2.4, weight=700),
         t(150, 277, "small, useful things — one side project at a time", 14, p["soft"], font=SANS),
-        # progress bar
-        f'<path d="M0 312H600" stroke="{p["rule"]}" stroke-width="2" stroke-linecap="round"/>',
-        f'<path class="seek" d="M0 312H600" stroke="{p["ink"]}" stroke-width="2" stroke-linecap="round"/>',
-        f'<circle class="knob" cx="0" cy="312" r="5" fill="{p["ink"]}"/>',
-        t(0, 338, "SOFTWARE · SMALL PROJECTS · SINGING", 10, p["muted"], ls=2.2),
-        t(600, 338, "04 TRACKS", 10, p["muted"], anchor="end", ls=2.2),
+        tl,
         disc, arm,
     ]
-    style = (".spin{transform-box:fill-box;transform-origin:center;animation:spin 8s linear infinite}"
-             "@keyframes spin{to{transform:rotate(360deg)}}"
-             ".seek{stroke-dasharray:600;stroke-dashoffset:600;animation:seek 40s linear infinite}"
-             "@keyframes seek{to{stroke-dashoffset:0}}"
-             ".knob{animation:knob 40s linear infinite}@keyframes knob{to{transform:translateX(600px)}}"
-             + EQ_CSS)
+    style = (".spin{transform-box:fill-box;transform-origin:center;animation:spin 20s linear infinite}"
+             "@keyframes spin{to{transform:rotate(360deg)}}" + tl_css + EQ_CSS)
     return svg(1000, 350, "Esther Lee Qian Hui, software development student at UTeM. "
                "A vinyl record spins next to a now-playing line.",
                f'<g transform="translate(4 0)">{"".join(body)}</g>', style)
